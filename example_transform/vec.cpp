@@ -25,7 +25,7 @@ Pairs tuple_map_all(PairTuples items) {
   return outputs;
 }
 
-int main() {
+void vec_transform_test() {
   std::vector<std::string> outputs;
   std::vector<std::string> inputs = { "a", "b", "c", "d", "e" };
 
@@ -34,8 +34,9 @@ int main() {
   for (std::string x : outputs) {
     std::cout << x << std::endl;
   }
+}
 
-
+void vec_transform_pair_tuples_test() {
   PairTuples inputs_tuple = { std::make_tuple("a", "a"), std::make_tuple("b", "b") };
   Pairs outputs_pairs = tuple_map_all(inputs_tuple);
 
@@ -43,6 +44,11 @@ int main() {
     std::cout << x.first << std::endl;
     std::cout << x.second << std::endl;
   }
+}
+
+int main() {
+  vec_transform_test();
+  vec_transform_pair_tuples_test();
 
   return 0;
 }
